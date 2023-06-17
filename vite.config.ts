@@ -23,11 +23,11 @@ export default defineConfig({
     }),
     // splitVendorChunkPlugin()
   ],
-  // resolve: {
-  //   alias: {
-  //     '@': fileURLToPath(new URL('./src', import.meta.url))
-  //   }
-  // },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  },
   build: {
     lib: {
       // entry: resolve(__dirname, './src/core/index.ts'),
@@ -37,6 +37,7 @@ export default defineConfig({
         // composable: resolve(__dirname, './src/core/composables/index.ts'),
         // until: resolve(__dirname, './src/core/util/index.ts'),
         // store: resolve(__dirname, './src/core/store/index.ts'),
+        component: resolve(__dirname, './src/build-components/index'),
         main: resolve(__dirname, './src/core/index.ts'),
       },
       formats: ["es", "cjs"],
