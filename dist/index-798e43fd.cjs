@@ -40,9 +40,9 @@ function useHeader(tagName) {
   customElements.define(tagName, WCHeader);
 }
 
-const HelloWorld = vue.defineAsyncComponent(() => Promise.resolve().then(() => require('./HelloWorld-4f9db98d.cjs')));
+const HelloWorld = vue.defineAsyncComponent(() => Promise.resolve().then(() => require('./HelloWorld-8370588b.cjs')));
 
 exports.HelloWorld = HelloWorld;
 exports._export_sfc = _export_sfc;
 exports.useHeader = useHeader;
-//# sourceMappingURL=index-f1167765.cjs.map
+//# sourceMappingURL=index-798e43fd.cjs.map

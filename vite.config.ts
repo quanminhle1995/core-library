@@ -23,27 +23,28 @@ export default defineConfig({
     }),
     // splitVendorChunkPlugin()
   ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src')
-    }
-  },
+  // resolve: {
+  //   alias: {
+  //     '@': fileURLToPath(new URL('./src', import.meta.url))
+  //   }
+  // },
   build: {
     lib: {
       // entry: resolve(__dirname, './src/core/index.ts'),
-      entry: resolve(__dirname, './src/build-components/index'),
+      entry: {
+        // useUser: resolve(__dirname, './src/core/composables/useUser.ts'),
+        // useGames: resolve(__dirname, './src/core/composables/useGames.ts'),
+        // composable: resolve(__dirname, './src/core/composables/index.ts'),
+        // until: resolve(__dirname, './src/core/util/index.ts'),
+        // store: resolve(__dirname, './src/core/store/index.ts'),
+        main: resolve(__dirname, './src/core/index.ts'),
+        component: resolve(__dirname, './src/build-components/index.ts')
+      },
       formats: ["es", "cjs"],
-      name: "component",
+      // name: "core",
       fileName: (format, entryName) => {
-        // format === 'es' ? `${entryName}.js` : `${entryName}.cjs`
-        let name = '';
-        if(format === 'es') {
-          return `${entryName}.js`
-        } else if(format === 'umd') {
-          return `${entryName}.umd.js`
-        } else {
-          return `${entryName}.cjs`
-        }
+        console.log(entryName);
+        return (format === 'es' ? `${entryName}.js` : `${entryName}.cjs`)
       }, 
     },
     rollupOptions: {
@@ -64,11 +65,6 @@ export default defineConfig({
           
       //   },
       // ],
-      output: {
-        globals: {
-          vue: "Vue"
-        }
-      }
     },
     sourcemap: true,
     target: "esnext",

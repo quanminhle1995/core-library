@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "files": ["dist"],
-  "main": "./dist/index.js",
-  "module": "./dist/index.cjs",
-  "types": "./dist/build-components/index.d.ts",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs"
     }
   },
   "scripts": {

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
 const vue = require('vue');
-const index = require('./index-f1167765.cjs');
+const component = require('./index-798e43fd.cjs');
 
 const _withScopeId = (n) => (vue.pushScopeId("data-v-c8919969"), n = n(), vue.popScopeId(), n);
 const _hoisted_1 = { class: "greetings" };
@@ -40,7 +40,7 @@ const _sfc_main = /* @__PURE__ */ vue.defineComponent({
 
 const HelloWorld_vue_vue_type_style_index_0_scoped_c8919969_lang = '';
 
-const HelloWorld = /* @__PURE__ */ index._export_sfc(_sfc_main, [["__scopeId", "data-v-c8919969"]]);
+const HelloWorld = /* @__PURE__ */ component._export_sfc(_sfc_main, [["__scopeId", "data-v-c8919969"]]);
 
 exports.default = HelloWorld;
-//# sourceMappingURL=HelloWorld-4f9db98d.cjs.map
+//# sourceMappingURL=HelloWorld-8370588b.cjs.map
