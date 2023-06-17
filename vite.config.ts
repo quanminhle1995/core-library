@@ -65,6 +65,11 @@ export default defineConfig({
           
       //   },
       // ],
+      output: {
+        globals: {
+          vue: "Vue"
+        }
+      }
     },
     sourcemap: true,
     target: "esnext",
