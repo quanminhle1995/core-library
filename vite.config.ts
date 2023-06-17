@@ -32,7 +32,7 @@ export default defineConfig({
     lib: {
       // entry: resolve(__dirname, './src/core/index.ts'),
       entry: resolve(__dirname, './src/build-components/index'),
-      formats: ["es", "cjs", "umd"],
+      formats: ["es", "cjs"],
       name: "component",
       fileName: (format, entryName) => {
         // format === 'es' ? `${entryName}.js` : `${entryName}.cjs`

@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "files": ["dist"],
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.cjs",
   "types": "./dist/build-components/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.js"
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
