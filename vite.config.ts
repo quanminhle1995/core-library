@@ -54,12 +54,14 @@ export default defineConfig({
       //   until: resolve(__dirname, './src/core/util/index.ts'),
       //   store: resolve(__dirname, './src/core/store/index.ts')
       // },
+      external: ['axios', 'vue'],
       // output: [
       //   {
       //     entryFileNames: ({ name: fileName }) => {
       //       return `${fileName}.js`
       //     },
       //     dir: resolve(__dirname, './dist'),
+          
       //   },
       // ],
     },
