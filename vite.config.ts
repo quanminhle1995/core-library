@@ -31,20 +31,19 @@ export default defineConfig({
   build: {
     lib: {
       // entry: resolve(__dirname, './src/core/index.ts'),
-      entry: {
-        // useUser: resolve(__dirname, './src/core/composables/useUser.ts'),
-        // useGames: resolve(__dirname, './src/core/composables/useGames.ts'),
-        // composable: resolve(__dirname, './src/core/composables/index.ts'),
-        // until: resolve(__dirname, './src/core/util/index.ts'),
-        // store: resolve(__dirname, './src/core/store/index.ts'),
-        component: resolve(__dirname, './src/build-components/index'),
-        main: resolve(__dirname, './src/core/index.ts'),
-      },
-      formats: ["es", "cjs"],
-      // name: "core",
+      entry: resolve(__dirname, './src/build-components/index'),
+      formats: ["es", "cjs", "umd"],
+      name: "component",
       fileName: (format, entryName) => {
-        console.log(entryName);
-        return (format === 'es' ? `${entryName}.js` : `${entryName}.cjs`)
+        // format === 'es' ? `${entryName}.js` : `${entryName}.cjs`
+        let name = '';
+        if(format === 'es') {
+          return `${entryName}.js`
+        } else if(format === 'umd') {
+          return `${entryName}.umd.js`
+        } else {
+          return `${entryName}.cjs`
+        }
       }, 
     },
     rollupOptions: {
@@ -65,6 +64,11 @@ export default defineConfig({
           
       //   },
       // ],
+      output: {
+        globals: {
+          vue: "Vue"
+        }
+      }
     },
     sourcemap: true,
     target: "esnext",

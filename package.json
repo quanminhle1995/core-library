@@ -13,8 +13,8 @@
       "require": "./dist/main.cjs"
     },
     "./components": {
-      "import": "./dist/component.js",
-      "require": "./dist/component.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
     }
   },
   "scripts": {
