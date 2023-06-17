@@ -27,7 +27,7 @@
 
   const _style_0 = "h1[data-v-38fcba5a] {\n  color: red;\n}";
 
-  const _export_sfc = (sfc, props) => {
+  const index._export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
       target[key] = val;
@@ -35,12 +35,14 @@
     return target;
   };
 
-  const Header = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["styles", [_style_0]], ["__scopeId", "data-v-38fcba5a"]]);
+  const Header = /* @__PURE__ */ index._export_sfc(_sfc_main$1, [["styles", [_style_0]], ["__scopeId", "data-v-38fcba5a"]]);
 
   function useHeader(tagName) {
     const WCHeader = vue.defineCustomElement(Header);
     customElements.define(tagName, WCHeader);
   }
+
+  const HelloWorld$2 = vue.defineAsyncComponent(() => Promise.resolve().then(() => HelloWorld$1));
 
   const _withScopeId = (n) => (vue.pushScopeId("data-v-c8919969"), n = n(), vue.popScopeId(), n);
   const _hoisted_1 = { class: "greetings" };
@@ -77,9 +79,14 @@
 
   const HelloWorld_vue_vue_type_style_index_0_scoped_c8919969_lang = '';
 
-  const HelloWorld = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-c8919969"]]);
+  const HelloWorld = /* @__PURE__ */ index._export_sfc(_sfc_main, [["__scopeId", "data-v-c8919969"]]);
 
-  exports.HelloWorldVue = HelloWorld;
+  const HelloWorld$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: HelloWorld
+  }, Symbol.toStringTag, { value: 'Module' }));
+
+  exports.HelloWorld = HelloWorld$2;
   exports.useHeader = useHeader;
 
   Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
