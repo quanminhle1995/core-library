@@ -11,6 +11,10 @@
     ".": {
       "import": "./dist/main.js",
       "require": "./dist/main.cjs"
+    },
+    "./components": {
+      "import": "./dist/component.js",
+      "require": "./dist/component.cjs"
     }
   },
   "scripts": {
