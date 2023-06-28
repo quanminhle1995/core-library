@@ -1,4 +1,4 @@
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 import axios from 'axios';
 
 function useGames() {
@@ -11,19 +11,31 @@ function useGames() {
 }
 
 function useUser() {
-  const user = reactive({
-    id: "",
+  const user = {
+    id: "0",
     username: "",
     email: ""
-  });
+  };
+  const userModel = {
+    get: () => {
+      return user;
+    },
+    set: (value) => {
+      user.id = value.id;
+      user.username = value.username;
+      user.email = value.email;
+    }
+  };
   function setUser(u) {
     user.id = u.id;
     user.username = u.username;
     user.email = u.email;
+    userModel.set(u);
   }
   return {
     user,
-    setUser
+    setUser,
+    userModel
   };
 }
 
@@ -67,5 +79,39 @@ async function useAxios(url, option) {
   };
 }
 
-export { createUserStore, useAxios$1 as useAxios, useGames, useUser };
-//# sourceMappingURL=main.js.map
+function AuthService() {
+  let token = "";
+  function setToken(tk) {
+    token = tk;
+  }
+  const getToken = () => {
+    return token;
+  };
+  return {
+    token,
+    setToken,
+    getToken
+  };
+}
+
+const AxiosService = (accessToken) => {
+  const get = () => {
+    console.log(accessToken);
+  };
+  return {
+    get
+  };
+};
+
+function useContext() {
+  const authService = AuthService();
+  const { getToken } = authService;
+  const axiosService = AxiosService(getToken());
+  return {
+    authService,
+    axiosService
+  };
+}
+
+export { createUserStore, useAxios$1 as useAxios, useContext, useGames, useUser };
+//# sourceMappingURL=main.es.js.map

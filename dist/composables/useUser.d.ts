@@ -6,4 +6,12 @@ export declare function useUser(): {
         email: string;
     };
     setUser: (u: IUser) => void;
+    userModel: {
+        get: () => {
+            id: string;
+            username: string;
+            email: string;
+        };
+        set: (value: any) => void;
+    };
 };

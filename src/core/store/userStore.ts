@@ -2,7 +2,6 @@ import { reactive, ref } from "vue";
 import type { IUser } from "../interface/IUser";
 import type { IUserStore } from "../interface/IUserStore";
 import axios, { type AxiosRequestConfig } from "axios"
-
 export function createUserStore() {
 
   const configAxios = ref();
@@ -19,6 +18,7 @@ export function createUserStore() {
     email: ''
   });
   function setUser(u: IUser) {
+     
      user.value = u;
   }
   return {

@@ -2,15 +2,17 @@
   "name": "web-components",
   "version": "0.0.1",
   "private": true,
-  "files": ["dist"],
-  "main": "./dist/main.cjs",
-  "module": "./dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.umd.js",
+  "module": "./dist/main.es.js",
   "types": "./dist/main.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.cjs"
+      "import": "./dist/main.es.js",
+      "require": "./dist/main.umd.js"
     }
   },
   "scripts": {

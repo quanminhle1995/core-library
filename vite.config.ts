@@ -32,19 +32,13 @@ export default defineConfig({
     lib: {
       // entry: resolve(__dirname, './src/core/index.ts'),
       entry: {
-        // useUser: resolve(__dirname, './src/core/composables/useUser.ts'),
-        // useGames: resolve(__dirname, './src/core/composables/useGames.ts'),
-        // composable: resolve(__dirname, './src/core/composables/index.ts'),
-        // until: resolve(__dirname, './src/core/util/index.ts'),
-        // store: resolve(__dirname, './src/core/store/index.ts'),
         main: resolve(__dirname, './src/core/index.ts'),
-        component: resolve(__dirname, './src/build-components/index.ts')
       },
-      formats: ["es", "cjs"],
-      // name: "core",
+      formats: ["es", "umd"],
+      name: "core",
       fileName: (format, entryName) => {
         console.log(entryName);
-        return (format === 'es' ? `${entryName}.js` : `${entryName}.cjs`)
+        return (format === 'es' ? `${entryName}.es.js` : `${entryName}.umd.js`)
       }, 
     },
     rollupOptions: {
